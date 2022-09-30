@@ -3,14 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Flex Morse - Morse code, simple</title>
-<!--    feuille de style bootstrap par defaut-->
+    <!--    feuille de style bootstrap par defaut-->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
-<!--    feuille de style personnalisée-->
-    <link href="./css/style.css" rel="stylesheet" />
+    <!--    feuille de style personnalisée-->
+    <link href="./css/style.css" rel="stylesheet"/>
 </head>
 <body>
 
-<h1>Hello world</h1>
+<!--header-->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Flex Morse</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row gx-5">
+        <div class="col">
+            <div class="bg-info p-3">
+                <h2>Zone de texte pour traduction</h2>
+                <form>
+                    <textarea class="form-control">
+
+                    </textarea>
+                    <br>
+                    <button class="btn btn-success">Traduire</button>
+                </form>
+            </div>
+        </div>
+        <div class="col">
+            <div class="bg-warning p-3">
+                <h2>Affichage traduction</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="./js/bootstrap.bundle.min.js"></script>
+<script src="./js/main.js"></script>
 
 </body>
 </html>

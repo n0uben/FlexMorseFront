@@ -20,25 +20,34 @@
 </div>
 
 <div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Traduire du texte</h2>
+        </div>
+    </div>
     <div class="row gx-5">
         <div class="col">
             <div class="bg-info p-3">
-                <h2>Zone de texte pour traduction</h2>
                 <form>
-                    <select id="choixLangue" class="form-select">
+                    <select id="choixLangueInput" class="form-select">
                         <option value="alphabet">Alphabet > Morse</option>
                         <option value="morse">Morse > Alphabet</option>
                     </select>
                     <br>
                     <textarea id="traductionInput" class="form-control form-control-lg" rows="8"></textarea>
                     <br>
-                    <button class="btn btn-success">Traduire</button>
+                    <input type="submit" class="btn btn-success" value="Traduire"/>
                 </form>
             </div>
         </div>
         <div class="col">
             <div class="bg-warning p-3">
-                <h2>Affichage traduction</h2>
+                <select id="choixLangueDisplay" class="form-select">
+                    <option value="morse">Morse > Alphabet</option>
+                    <option value="alphabet">Alphabet > Morse</option>
+                </select>
+
+                <br>
 
                 <div id="traductionDisplay" class="bg-secondary text-white p-4 ">
                     <p class="">affichage du texte traduit</p>

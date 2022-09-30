@@ -14,7 +14,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1>Flex Morse</h1>
+            <h1 class="text-center"><img src="img/logo-flex-morse.png" alt="Flex Morse"></h1>
         </div>
     </div>
 </div>
@@ -25,9 +25,12 @@
             <div class="bg-info p-3">
                 <h2>Zone de texte pour traduction</h2>
                 <form>
-                    <textarea class="form-control">
-
-                    </textarea>
+                    <select id="choixLangue" class="form-select">
+                        <option value="alphabet">Alphabet > Morse</option>
+                        <option value="morse">Morse > Alphabet</option>
+                    </select>
+                    <br>
+                    <textarea id="traductionInput" class="form-control form-control-lg" rows="8"></textarea>
                     <br>
                     <button class="btn btn-success">Traduire</button>
                 </form>
@@ -36,6 +39,10 @@
         <div class="col">
             <div class="bg-warning p-3">
                 <h2>Affichage traduction</h2>
+
+                <div id="traductionDisplay" class="bg-secondary text-white p-4 ">
+                    <p class="">affichage du texte traduit</p>
+                </div>
             </div>
         </div>
     </div>

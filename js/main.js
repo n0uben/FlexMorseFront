@@ -1,5 +1,6 @@
 function traduire(event) {
     const textToTranslate = event.target[0].value;
+    const blockTranslatedText = document.querySelector('#traductionDisplay');
 
     const inputLanguageValue = document.querySelector('#inputLanguage').innerHTML.toLowerCase();
     const displayLanguageValue = document.querySelector('#displayLanguage').innerHTML.toLowerCase();
@@ -19,7 +20,9 @@ function traduire(event) {
         body: JSON.stringify(dataToSend)
     })
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => {
+            blockTranslatedText.innerHTML = data.texteTraduit;
+        })
         .catch(error => console.error(error));
 }
 

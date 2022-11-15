@@ -33,7 +33,6 @@ function initEvents() {
 
     tradForm.addEventListener("keyup", (event) => {
         event.preventDefault();
-        console.log("coucou");
         traduire();
     });
 

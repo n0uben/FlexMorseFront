@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flex Morse - Morse code, simple</title>
+  <!--    feuille de style bootstrap par defaut-->
+  <link href="./css/bootstrap.min.css" rel="stylesheet">
+  <!--    feuille de style personnalisée-->
+  <link href="./css/style.css" rel="stylesheet"/>
+</head>
+<body>
+
+<noscript>
+  <p style="font-size: 45px; color: red; font-weight: bold; text-decoration: underline;">
+    Veuillez activer Javascript pour que FlexMorse fonctionne !
+  </p>
+</noscript>
+
+<!--header-->
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="text-center"><img src="img/logo-flex-morse.png" alt="Flex Morse"></h1>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html"> > Traduire du texte</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="file.html"> > Traduire un fichier</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row mb-3">
+    <div class="col">
+      <h2>Traduire un fichier</h2>
+    </div>
+  </div>
+</div>
+<div class="container border border-1 border-opacity-50 border-secondary rounded-2">
+
+  <div class="row mb-3 p-3">
+    <div class="col">
+      <p id="inputLanguage">Alphabet</p>
+    </div>
+    <div class="col-1 text-center">
+      <button id="switchLanguages" class="btn p-0">
+        <svg width="30" height="30" viewBox="0 0 20 20" fill="none">
+          <path d="M5 13.8317L6.57731 12.2972V15.3661L5 13.8317ZM5 13.8317H14.5" stroke="currentColor"
+                stroke-width="2"></path>
+          <path d="M14.5 6.53448L12.9227 5V8.06897L14.5 6.53448ZM14.5 6.53448H5" stroke="currentColor"
+                stroke-width="2"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="col">
+      <p id="displayLanguage">Morse</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col p-0 border pt-5 pb-5">
+
+      <form>
+        <input type="file" id="fileToTranslate" class="form-control" required>
+        <input type="button" id="submitFile" class="form-control" value="Traduire">
+      </form>
+
+    </div>
+    <div class="col border">
+      <p id="traductionDisplay" class="form-control-lg"></p>
+    </div>
+  </div>
+</div>
+
+<script src="./js/bootstrap.bundle.min.js"></script>
+<script src="./js/mainFile.js"></script>
+
+</body>
+</html>

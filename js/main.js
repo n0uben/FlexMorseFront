@@ -7,8 +7,11 @@ function traduire(event) {
 
     const UrlToFetch = `http://localhost:8080/traduction/${inputLanguageValue}/${displayLanguageValue}`;
     const dataToSend = {
-        texteTraduit: textToTranslate
+        texte: textToTranslate
     } 
+
+    console.log(UrlToFetch);
+    console.log(dataToSend);
 
     fetch(UrlToFetch, {
         method: 'POST',

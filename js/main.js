@@ -1,17 +1,14 @@
-function traduire(event) {
-    const textToTranslate = event.target[0].value;
+function traduire() {
+    const textToTranslate = document.querySelector("#traductionInput").value;
     const blockTranslatedText = document.querySelector('#traductionDisplay');
 
-    const inputLanguageValue = document.querySelector('#inputLanguage').innerHTML.toLowerCase();
-    const displayLanguageValue = document.querySelector('#displayLanguage').innerHTML.toLowerCase();
+    const inputLanguageValue = document.querySelector('#inputLanguage').innerHTML.trim().toLowerCase();
+    const displayLanguageValue = document.querySelector('#displayLanguage').innerHTML.trim().toLowerCase();
 
     const UrlToFetch = `http://localhost:8080/traduction/${inputLanguageValue}/${displayLanguageValue}`;
     const dataToSend = {
         texte: textToTranslate
-    } 
-
-    console.log(UrlToFetch);
-    console.log(dataToSend);
+    }
 
     fetch(UrlToFetch, {
         method: 'POST',
@@ -32,12 +29,19 @@ function traduire(event) {
 
 function initEvents() {
     /*Event traduction*/
-    const tradForm = document.querySelector("form");
+    const tradForm = document.querySelector("textarea");
 
-    tradForm.addEventListener("submit", (event) => {
+    tradForm.addEventListener("keyup", (event) => {
         event.preventDefault();
-        traduire(event);
+        console.log("coucou");
+        traduire();
     });
+
+    // tradForm.addEventListener("submit", (event) => {
+    //     event.preventDefault();
+    //     console.log("coucou");
+    //     traduire();
+    // });
 
     /*Event switch langues*/
     const btnSwitchLanguages = document.querySelector("#switchLanguages");
@@ -48,18 +52,22 @@ function initEvents() {
 }
 
 function switchLanguages(event) {
+    // noms langages
     const inputLanguage = document.querySelector('#inputLanguage');
     const displayLanguage = document.querySelector('#displayLanguage');
 
+    //textarea et display trad
     const traductionInput = document.querySelector("#traductionInput");
     const traductionDisplay = document.querySelector("#traductionDisplay")
 
+    //les values des elements ci-dessus
     const inputLanguageValue = inputLanguage.innerHTML;
     const displayLanguageValue = displayLanguage.innerHTML;
 
     const traductionInputValue = traductionInput.value;
     const traductionDisplayValue = traductionDisplay.innerHTML;
 
+    //on inverse tout
     inputLanguage.innerHTML = displayLanguageValue;
     displayLanguage.innerHTML = inputLanguageValue;
 

@@ -51,11 +51,20 @@ function switchLanguages(event) {
     const inputLanguage = document.querySelector('#inputLanguage');
     const displayLanguage = document.querySelector('#displayLanguage');
 
+    const traductionInput = document.querySelector("#traductionInput");
+    const traductionDisplay = document.querySelector("#traductionDisplay")
+
     const inputLanguageValue = inputLanguage.innerHTML;
     const displayLanguageValue = displayLanguage.innerHTML;
 
+    const traductionInputValue = traductionInput.value;
+    const traductionDisplayValue = traductionDisplay.innerHTML;
+
     inputLanguage.innerHTML = displayLanguageValue;
     displayLanguage.innerHTML = inputLanguageValue;
+
+    traductionInput.value = traductionDisplayValue;
+    traductionDisplay.innerHTML = traductionInputValue;
 }
 
 initEvents();

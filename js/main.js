@@ -24,7 +24,8 @@ function traduire(event) {
     })
         .then(response => response.json())
         .then(data => {
-            blockTranslatedText.innerHTML = data.texteTraduit;
+            blockTranslatedText.innerHTML = data.texte;
+            console.log(data);
         })
         .catch(error => console.error(error));
 }
